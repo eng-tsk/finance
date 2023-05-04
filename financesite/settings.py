@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'fx',
+    'hist',
+    'rest',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +82,15 @@ WSGI_APPLICATION = 'financesite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bjfk7_fxhist',
+        'USER': 'bjfk7_tsk',
+        'PASSWORD': 'Dyut02130213.',
+        'HOST': 'public.bjfk7.tyo2.database-hosting.conoha.io',
+        'PORT': '3306',
+        "OPTIONS": {
+            "init_command": "SET default_storage_engine=INNODB",
+        }
     }
 }
 

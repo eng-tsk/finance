@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest import views
 
 urlpatterns = [
     path("fx", include("fx.urls")),
+    path("hist", include("hist.urls")),
+    path("api/history/", views.HistoryListACreateAPIView.as_view()),
+    path("api/history/<pk>/", views.HistoryRetrieveUpdateDestroyAPIView.as_view()),
     path('admin/', admin.site.urls),
 ]

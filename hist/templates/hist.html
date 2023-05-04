@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="utf-8">
+  <title>履歴</title> 
+</head>
+  <body>
+    <button  class="button modalOpen">Click Me</button>
+    <div class="modal">
+      <div class="modal-inner">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>windowを開きました</h1>
+          <span class="modalClose">×</span>
+        </div>
+        <div class="modal-body">
+          <form method="POST" class="post-form">{% csrf_token %}
+            <input type="text" name="title" maxlength="10"></br>
+            <input type="text" name="text" maxlength="30">
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      </div>
+   </div>
+      <div class="buffer"></div>
+      <script src="{% static 'js/modal.js' %}"></script>
+  </body>
+</html>

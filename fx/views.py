@@ -21,7 +21,7 @@ def index(requests):
         'data': rate
     }
 
-    return render(requests, 'index.html', params)
+    return render(requests, 'fx.html', params)
 
 def get_exchange_rate(pair, start, end):
     selected = f"{pair}=X"
